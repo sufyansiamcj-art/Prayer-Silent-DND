@@ -1,0 +1,6 @@
+{
+  "name": "صامت الصلاة",
+  "description": "تطبيق أتمتة وضع عدم الإزعاج أثناء الصلاة وضبط القبلة والأذكار",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
