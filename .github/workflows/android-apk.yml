@@ -46,6 +46,15 @@ jobs:
           "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --sdk_root="$ANDROID_HOME" --licenses
           "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --sdk_root="$ANDROID_HOME" --install "platform-tools" "platforms;android-${ANDROID_API}" "build-tools;${ANDROID_BUILD_TOOLS}"
 
+      - name: Install Gradle
+        shell: bash
+        run: |
+          set -euxo pipefail
+          mkdir -p /opt/gradle
+          curl -fsSL https://services.gradle.org/distributions/gradle-9.1.1-bin.zip -o /tmp/gradle.zip
+          unzip -q /tmp/gradle.zip -d /opt/gradle
+          echo "/opt/gradle/gradle-9.1.1/bin" >> "$GITHUB_PATH"
+
       - name: Grant execute permission for Gradle wrapper
         run: chmod +x ./gradlew
 
